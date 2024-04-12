@@ -1,6 +1,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:poll_creation_app/const/app_colors.dart';
 
 ///This class defines light theme and dark theme
 ///Here we used flex color scheme
@@ -9,6 +10,7 @@ class Themes {
         scheme: FlexScheme.bahamaBlue,
         surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
         blendLevel: 7,
+
         appBarStyle: FlexAppBarStyle.background,
         appBarOpacity: 0.90,
         subThemesData: const FlexSubThemesData(
@@ -37,6 +39,7 @@ class Themes {
   static ThemeData get darkTheme => FlexThemeData.dark(
         scheme: FlexScheme.bahamaBlue,
         surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
+        scaffoldBackground: AppColors.scaffoldBgColor,
         blendLevel: 13,
         appBarStyle: FlexAppBarStyle.background,
         appBarOpacity: 0.90,
