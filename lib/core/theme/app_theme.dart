@@ -41,18 +41,16 @@ class Themes {
         surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
         scaffoldBackground: AppColors.scaffoldBgColor,
         blendLevel: 13,
-        appBarStyle: FlexAppBarStyle.background,
-        appBarOpacity: 0.90,
+        primary: AppColors.primaryColor,
+        appBarStyle: FlexAppBarStyle.primary,
+
         subThemesData: const FlexSubThemesData(
           blendOnLevel: 20,
           useTextTheme: true,
           alignedDropdown: true,
           useInputDecoratorThemeInDialogs: true,
         ),
-        keyColors: const FlexKeyColors(
-          useSecondary: true,
-          useTertiary: true,
-        ),
+
         visualDensity: FlexColorScheme.comfortablePlatformDensity,
         useMaterial3: false,
         pageTransitionsTheme: const PageTransitionsTheme(
