@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:gradient_borders/input_borders/gradient_outline_input_border.dart';
 import 'package:poll_creation_app/const/app_colors.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class LargeTextForm extends StatelessWidget {
+class SmallTextForm extends StatelessWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final bool isReadOnly;
@@ -29,13 +30,12 @@ class LargeTextForm extends StatelessWidget {
   final int? maxLine;
   final bool? autoFocus;
   final bool? isDense;
-
   final InputBorder? focusedBorder;
   final void Function(String?)? onSubmit;
   final double fontSize;
   final double? letterSpacing;
   final void Function(PointerDownEvent)? onTapOutside;
-  const LargeTextForm({
+  const SmallTextForm({
     super.key,
     this.prefixIcon,
     this.suffixIcon,
@@ -108,16 +108,28 @@ class LargeTextForm extends StatelessWidget {
         filled: isFilled,
         fillColor: filledColor,
         errorStyle: isErrorText! ? const TextStyle(color: AppColors.kErrorColor) : null,
-        enabledBorder: enabledBorder ??
-            OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.transparent),
-              borderRadius: BorderRadius.circular(8),
-            ),
-        focusedBorder: focusedBorder ??
-            OutlineInputBorder(
-              borderSide: const BorderSide(color: Colors.transparent),
-              borderRadius: BorderRadius.circular(8),
-            ),
+        enabledBorder: GradientOutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              AppColors.kPrimaryColor.withOpacity(0.06),
+              AppColors.kPrimaryColor,
+            ],
+          ),
+        ),
+        focusedBorder: GradientOutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              AppColors.kPrimaryColor.withOpacity(0.06),
+              AppColors.kPrimaryColor,
+            ],
+          ),
+        ),
         errorBorder: OutlineInputBorder(
           borderSide: const BorderSide(color: AppColors.kErrorColor, width: 1.0),
           borderRadius: BorderRadius.circular(8),

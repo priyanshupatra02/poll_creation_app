@@ -14,8 +14,8 @@ class AppBarColor extends StatelessWidget {
           begin: Alignment.centerLeft,
           end: Alignment.centerRight,
           colors: [
-            AppColors.primaryColor,
-            AppColors.secondPrimaryColor,
+            AppColors.kPrimaryColor,
+            AppColors.kSecondPrimaryColor,
           ],
         ),
       ),

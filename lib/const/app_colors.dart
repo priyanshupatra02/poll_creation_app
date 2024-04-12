@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
-  static const Color scaffoldBgColor = Color(0xFF222222);
+  static const Color kScaffoldBgColor = Color(0xFF222222);
 
-  static const Color primaryColor = Color(0xFFF58600);
-  static const Color secondPrimaryColor = Color(0xFFC64216);
+  static const Color kPrimaryColor = Color(0xFFF58600);
+  static const Color kSecondPrimaryColor = Color(0xFFC64216);
 
-  static const Color secondaryColor = Color(0xFF000000);
-  static const Color tertiaryColor = Color(0xFFFFFFFF);
+  static const Color kSecondaryColor = Color(0xFF000000);
+  static const Color kTertiaryColor = Color(0xFFFFFFFF);
 
   //alert colors
   static const Color kErrorColor = Colors.red;

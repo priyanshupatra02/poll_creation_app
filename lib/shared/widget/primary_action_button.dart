@@ -19,17 +19,18 @@ class PrimaryActionButton extends StatelessWidget {
     return FilledButton(
       onPressed: onPressed,
       style: FilledButton.styleFrom(
-        fixedSize: const Size(double.infinity, 60),
-        backgroundColor: AppColors.primaryColor,
-        shape: const StadiumBorder(side: BorderSide(width: 2)),
-      ),
+          fixedSize: Size(context.screenWidth * 0.5, 65),
+          backgroundColor: AppColors.kPrimaryColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          )),
       child: isLoading
           ? JumpingDots(
-              color: AppColors.tertiaryColor,
+              color: AppColors.kTertiaryColor,
               radius: 10,
               animationDuration: const Duration(milliseconds: 250),
             )
-          : buttonLabel.text.size(18).bold.color(AppColors.secondaryColor).make(),
+          : buttonLabel.text.size(20).bold.color(AppColors.kSecondaryColor).make(),
     );
   }
 }

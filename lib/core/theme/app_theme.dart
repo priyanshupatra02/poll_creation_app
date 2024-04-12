@@ -39,9 +39,9 @@ class Themes {
   static ThemeData get darkTheme => FlexThemeData.dark(
         scheme: FlexScheme.bahamaBlue,
         surfaceMode: FlexSurfaceMode.levelSurfacesLowScaffold,
-        scaffoldBackground: AppColors.scaffoldBgColor,
+        scaffoldBackground: AppColors.kScaffoldBgColor,
         blendLevel: 13,
-        primary: AppColors.primaryColor,
+        primary: AppColors.kPrimaryColor,
         appBarStyle: FlexAppBarStyle.primary,
 
         subThemesData: const FlexSubThemesData(

@@ -6,15 +6,26 @@ import 'package:poll_creation_app/core/router/router.gr.dart';
 class AppRouter extends $AppRouter {
   @override
   late final List<AutoRoute> routes = [
-    AdaptiveRoute(
-      page: HomeRoute.page,
-      path: '/',
-      initial: true,
-    ),
+    // AdaptiveRoute(
+    //   page: HomeRoute.page,
+    //   path: '/',
+    //   initial: true,
+    // ),
     AdaptiveRoute(
       page: CounterRoute.page,
       path: '/counter-page',
-
+    ),
+    AdaptiveRoute(
+      page: NavBarRoute.page,
+      path: '/',
+      initial: true,
+      // guards: [
+      //   LoginGuard(loginDbService: loginDbService),
+      // ],
+      children: [
+        AdaptiveRoute(page: HomeRoute.page),
+        AdaptiveRoute(page: PollsCommunityRoute.page),
+      ],
     ),
   ];
 }

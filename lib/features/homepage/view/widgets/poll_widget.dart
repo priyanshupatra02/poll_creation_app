@@ -42,8 +42,8 @@ class _PollWidgetState extends State<PollWidget> {
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  AppColors.primaryColor.withOpacity(0.06),
-                  AppColors.primaryColor,
+                  AppColors.kPrimaryColor.withOpacity(0.06),
+                  AppColors.kPrimaryColor,
                 ],
               ),
               width: 1.5,

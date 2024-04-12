@@ -10,44 +10,42 @@ class StatementForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: LargeTextForm(
-        hintText: 'write here...',
-        name: HomepageFormKeys.statement,
-        isDense: false,
-        maxLine: null,
-        minLine: 5,
-        textInputAction: TextInputAction.newline,
-        keyboardType: TextInputType.multiline,
-        contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        enabledBorder: GradientOutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          width: 0.75,
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            // stops: [0.1, 0.9],
-            colors: [
-              Colors.white.withOpacity(0.02),
-              Colors.white.withOpacity(0.5),
-              Colors.white,
-            ],
-          ),
+    return LargeTextForm(
+      hintText: 'write here...',
+      name: HomepageFormKeys.statement,
+      isDense: false,
+      maxLine: null,
+      minLine: 5,
+      textInputAction: TextInputAction.newline,
+      keyboardType: TextInputType.multiline,
+      contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      enabledBorder: GradientOutlineInputBorder(
+        borderRadius: BorderRadius.circular(15),
+        width: 0.75,
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          // stops: [0.1, 0.9],
+          colors: [
+            Colors.white.withOpacity(0.02),
+            Colors.white.withOpacity(0.5),
+            Colors.white,
+          ],
         ),
-        focusedBorder: GradientOutlineInputBorder(
-          borderRadius: BorderRadius.circular(15),
-          width: 0.75,
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            // stops: [0.1, 0.9],
-            colors: [
-              Colors.white.withOpacity(0.01),
-              Colors.white,
-              Colors.white,
-              Colors.white,
-            ],
-          ),
+      ),
+      focusedBorder: GradientOutlineInputBorder(
+        borderRadius: BorderRadius.circular(15),
+        width: 0.75,
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          // stops: [0.1, 0.9],
+          colors: [
+            Colors.white.withOpacity(0.01),
+            Colors.white,
+            Colors.white,
+            Colors.white,
+          ],
         ),
       ),
     );

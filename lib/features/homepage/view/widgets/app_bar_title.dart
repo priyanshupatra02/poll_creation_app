@@ -13,7 +13,7 @@ class AppBarTitle extends StatelessWidget {
       'Moderators Poll',
       style: GoogleFonts.poppins(
         fontWeight: FontWeight.w600,
-        color: AppColors.tertiaryColor,
+        color: AppColors.kTertiaryColor,
       ),
     );
   }
