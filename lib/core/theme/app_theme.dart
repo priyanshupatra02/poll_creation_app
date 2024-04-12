@@ -34,7 +34,7 @@ class Themes {
         visualDensity: FlexColorScheme.comfortablePlatformDensity,
         useMaterial3: false,
         // To use the Playground font, add GoogleFonts package and uncomment
-        fontFamily: GoogleFonts.poppins().fontFamily,
+        fontFamily: GoogleFonts.roboto().fontFamily,
       );
   static ThemeData get darkTheme => FlexThemeData.dark(
         scheme: FlexScheme.bahamaBlue,
@@ -61,7 +61,7 @@ class Themes {
           },
         ),
         // To use the Playground font, add GoogleFonts package and uncomment
-        fontFamily: GoogleFonts.poppins().fontFamily,
+        fontFamily: GoogleFonts.roboto().fontFamily,
       );
 // If you do not have a themeMode switch, uncomment this line
 // to let the device system mode control the theme mode:
