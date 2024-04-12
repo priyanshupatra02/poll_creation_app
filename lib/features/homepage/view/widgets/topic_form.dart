@@ -7,7 +7,7 @@ class TopicForm extends StatelessWidget {
   const TopicForm({
     super.key,
   });
-  
+
   @override
   Widget build(BuildContext context) {
     return Flexible(
@@ -26,7 +26,6 @@ class TopicForm extends StatelessWidget {
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
-            // stops: [0.1, 0.9],
             colors: [
               Colors.white.withOpacity(0.02),
               Colors.white.withOpacity(0.5),

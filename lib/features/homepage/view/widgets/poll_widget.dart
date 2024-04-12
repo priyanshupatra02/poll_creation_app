@@ -26,12 +26,17 @@ class PollWidget extends StatefulWidget {
 class _PollWidgetState extends State<PollWidget> {
   @override
   Widget build(BuildContext context) {
-    return Opacity(
-      opacity: widget.isSelected ? 1 : 0.5,
-      child: Container(
-        width: context.screenWidth * 0.27,
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-        decoration: BoxDecoration(
+    return GestureDetector(
+      onTap: () {
+        widget.onChanged!(widget.value);
+      },
+      child: Opacity(
+        opacity: widget.isSelected ? 1 : 0.5,
+        child: Container(
+          width: context.screenWidth * 0.27,
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+          decoration: BoxDecoration(
+            color: widget.isSelected ? AppColors.kFillColor.withOpacity(0.6) : Colors.transparent,
             border: GradientBoxBorder(
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
@@ -43,17 +48,23 @@ class _PollWidgetState extends State<PollWidget> {
               ),
               width: 1.5,
             ),
-            borderRadius: BorderRadius.circular(16)),
-        child: Column(
-          children: [
-            widget.headerText.text.uppercase.color(AppColors.kHeaderTextColor).size(15).bold.make(),
-            'Poll'.text.color(AppColors.kHeaderTextColor).size(14).make(),
-            Radio<Polls?>(
-              value: widget.value,
-              groupValue: widget.selectedRadio,
-              onChanged: widget.onChanged,
-            ),
-          ],
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Column(
+            children: [
+              widget.headerText.text.uppercase
+                  .color(AppColors.kHeaderTextColor)
+                  .size(15)
+                  .bold
+                  .make(),
+              'Poll'.text.color(AppColors.kHeaderTextColor).size(14).make(),
+              Radio<Polls?>(
+                value: widget.value,
+                groupValue: widget.selectedRadio,
+                onChanged: widget.onChanged,
+              ),
+            ],
+          ),
         ),
       ),
     );
