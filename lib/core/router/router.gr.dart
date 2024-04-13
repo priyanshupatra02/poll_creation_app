@@ -9,54 +9,68 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i5;
+import 'package:poll_creation_app/features/all_polls/view/all_polls_page.dart'
+    as _i1;
 import 'package:poll_creation_app/features/counter/view/counter_page.dart'
-    deferred as _i1;
-import 'package:poll_creation_app/features/homepage/view/home_page.dart' as _i2;
+    deferred as _i2;
+import 'package:poll_creation_app/features/homepage/view/home_page.dart' as _i3;
 import 'package:poll_creation_app/features/navbar/navbar_page.dart'
-    deferred as _i3;
-import 'package:poll_creation_app/features/polls_community/view/polls_community_page.dart'
-    as _i4;
+    deferred as _i4;
 
 abstract class $AppRouter extends _i5.RootStackRouter {
   $AppRouter({super.navigatorKey});
 
   @override
   final Map<String, _i5.PageFactory> pagesMap = {
+    AllPollsRoute.name: (routeData) {
+      return _i5.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i1.AllPollsPage(),
+      );
+    },
     CounterRoute.name: (routeData) {
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i5.DeferredWidget(
-          _i1.loadLibrary,
-          () => _i1.CounterPage(),
+          _i2.loadLibrary,
+          () => _i2.CounterPage(),
         ),
       );
     },
     HomeRoute.name: (routeData) {
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
-        child: const _i2.HomePage(),
+        child: const _i3.HomePage(),
       );
     },
     NavBarRoute.name: (routeData) {
       return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i5.DeferredWidget(
-          _i3.loadLibrary,
-          () => _i3.NavBarPage(),
+          _i4.loadLibrary,
+          () => _i4.NavBarPage(),
         ),
-      );
-    },
-    PollsCommunityRoute.name: (routeData) {
-      return _i5.AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const _i4.PollsCommunityPage(),
       );
     },
   };
 }
 
 /// generated route for
-/// [_i1.CounterPage]
+/// [_i1.AllPollsPage]
+class AllPollsRoute extends _i5.PageRouteInfo<void> {
+  const AllPollsRoute({List<_i5.PageRouteInfo>? children})
+      : super(
+          AllPollsRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AllPollsRoute';
+
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
+}
+
+/// generated route for
+/// [_i2.CounterPage]
 class CounterRoute extends _i5.PageRouteInfo<void> {
   const CounterRoute({List<_i5.PageRouteInfo>? children})
       : super(
@@ -70,7 +84,7 @@ class CounterRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i2.HomePage]
+/// [_i3.HomePage]
 class HomeRoute extends _i5.PageRouteInfo<void> {
   const HomeRoute({List<_i5.PageRouteInfo>? children})
       : super(
@@ -84,7 +98,7 @@ class HomeRoute extends _i5.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.NavBarPage]
+/// [_i4.NavBarPage]
 class NavBarRoute extends _i5.PageRouteInfo<void> {
   const NavBarRoute({List<_i5.PageRouteInfo>? children})
       : super(
@@ -93,20 +107,6 @@ class NavBarRoute extends _i5.PageRouteInfo<void> {
         );
 
   static const String name = 'NavBarRoute';
-
-  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
-}
-
-/// generated route for
-/// [_i4.PollsCommunityPage]
-class PollsCommunityRoute extends _i5.PageRouteInfo<void> {
-  const PollsCommunityRoute({List<_i5.PageRouteInfo>? children})
-      : super(
-          PollsCommunityRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'PollsCommunityRoute';
 
   static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }

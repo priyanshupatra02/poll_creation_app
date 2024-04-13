@@ -24,7 +24,7 @@ class AppRouter extends $AppRouter {
       // ],
       children: [
         AdaptiveRoute(page: HomeRoute.page),
-        AdaptiveRoute(page: PollsCommunityRoute.page),
+        AdaptiveRoute(page: AllPollsRoute.page),
       ],
     ),
   ];

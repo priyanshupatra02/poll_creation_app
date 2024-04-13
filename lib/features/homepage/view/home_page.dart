@@ -40,7 +40,7 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const AppBarTitle(),
+        title: const AppBarTitle(appbarTitle: 'Moderators Poll'),
         flexibleSpace: const AppBarColor(),
       ),
       body: SafeArea(

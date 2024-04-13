@@ -14,7 +14,7 @@ class NavBarPage extends StatelessWidget {
     return AutoTabsScaffold(
       routes: const [
         HomeRoute(),
-        PollsCommunityRoute(),
+        AllPollsRoute(),
       ],
       bottomNavigationBuilder: (context, tabsRouter) {
         return NavigationBar(
