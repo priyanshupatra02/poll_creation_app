@@ -51,7 +51,7 @@ class JumpingDots extends StatefulWidget {
         assert(verticalOffset != 0, "Zero values (0) cannot be set as an animation offset.");
 
   @override
-  _JumpingDotsState createState() => _JumpingDotsState();
+  State<JumpingDots> createState() => _JumpingDotsState();
 }
 
 class _JumpingDotsState extends State<JumpingDots> with TickerProviderStateMixin {

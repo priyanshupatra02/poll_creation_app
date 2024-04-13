@@ -3,9 +3,13 @@ import 'package:gradient_borders/box_borders/gradient_box_border.dart';
 import 'package:poll_creation_app/const/app_colors.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class OnePollResponseWidget extends StatelessWidget {
-  const OnePollResponseWidget({
+class SinglePollResponseWidget extends StatelessWidget {
+  final String pollTitle;
+  final int pollPercent;
+  const SinglePollResponseWidget({
     super.key,
+    required this.pollTitle,
+    required this.pollPercent,
   });
 
   @override
@@ -36,7 +40,7 @@ class OnePollResponseWidget extends StatelessWidget {
             ),
           ),
           child: LinearProgressIndicator(
-            value: 0.34,
+            value: pollPercent / 100,
             backgroundColor: AppColors.kFillColor,
             minHeight: 60,
             borderRadius: BorderRadius.circular(10),
@@ -45,7 +49,7 @@ class OnePollResponseWidget extends StatelessWidget {
             ),
           ),
         ),
-        'US Intel Aids Canada in Nijjar Case \n 34%'
+        'pollTitle \n $pollPercent%'
             .text
             .align(TextAlign.center)
             .size(16)

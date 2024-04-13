@@ -6,8 +6,22 @@ import 'package:poll_creation_app/features/all_polls/view/widget/one_poll_respon
 import 'package:velocity_x/velocity_x.dart';
 
 class PollCompleteResponseWidget extends StatelessWidget {
+  final String topic;
+  final String statement;
+  final int numberOfPolls;
+  final List<String> pollTitles;
+  final int pollResponsePercent;
+  final int noOfLikes;
+  final int noOfComments;
   const PollCompleteResponseWidget({
     super.key,
+    required this.topic,
+    required this.statement,
+    required this.numberOfPolls,
+    required this.pollTitles,
+    required this.pollResponsePercent,
+    required this.noOfLikes,
+    required this.noOfComments,
   });
 
   @override
@@ -32,19 +46,14 @@ class PollCompleteResponseWidget extends StatelessWidget {
           ),
           child: Column(
             children: [
-              'Rohit Sharma Speaks Out on Mumbai Pollution Amidst ODI Worlds'
-                  .text
+              topic.text
                   .fontFamily(GoogleFonts.odorMeanChey().fontFamily!)
                   .size(22)
                   .align(TextAlign.center)
                   .color(AppColors.kTertiaryColor)
                   .make(),
               20.heightBox,
-              'US Intel Aids Canada in Nijjar Case'
-                  .text
-                  .size(18)
-                  .color(AppColors.kHeaderTextColor.withOpacity(0.6))
-                  .make(),
+              statement.text.size(18).color(AppColors.kHeaderTextColor.withOpacity(0.6)).make(),
               10.heightBox,
               RichText(
                 text: const TextSpan(
@@ -66,17 +75,25 @@ class PollCompleteResponseWidget extends StatelessWidget {
                 ),
               ),
               20.heightBox,
-              const OnePollResponseWidget(),
-              20.heightBox,
-              const OnePollResponseWidget(),
-              20.heightBox,
-              const OnePollResponseWidget(),
+              ListView.separated(
+                primary: false,
+                shrinkWrap: true,
+                physics: const BouncingScrollPhysics(),
+                itemCount: numberOfPolls,
+                itemBuilder: (context, index) {
+                  return SinglePollResponseWidget(
+                    pollTitle: pollTitles[index],
+                    pollPercent: pollResponsePercent,
+                  );
+                },
+                separatorBuilder: (context, index) => 20.heightBox,
+              ),
               20.heightBox,
               Row(
                 children: [
                   const Icon(Icons.comment_outlined, color: AppColors.kPrimaryColor),
                   5.widthBox,
-                  '4.5k comments'.text.size(16).color(AppColors.kPrimaryColor).make(),
+                  '$noOfComments comments'.text.size(16).color(AppColors.kPrimaryColor).make(),
                   30.widthBox,
                   const Icon(Icons.send, color: AppColors.kPrimaryColor),
                   5.widthBox,
@@ -106,8 +123,7 @@ class PollCompleteResponseWidget extends StatelessWidget {
                 subtitle: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    'Us intel.. comments..'
-                        .text
+                    statement.text
                         .size(14)
                         .color(AppColors.kHeaderTextColor.withOpacity(0.6))
                         .make(),
@@ -116,7 +132,7 @@ class PollCompleteResponseWidget extends StatelessWidget {
                       children: [
                         const Icon(Icons.favorite_border),
                         5.widthBox,
-                        '2.1k'.text.size(14).make(),
+                        noOfLikes.text.size(14).make(),
                       ],
                     ),
                   ],
